@@ -1,29 +1,34 @@
 # .github (Governance & Central Administration)
 
 ## 📌 概要
-本リポジトリは、Standard Architecture Blueprint (SAB) プロジェクト全体の**ガバナンス（統治）**と**共通設定**を管理するためのセントラルリポジトリである。
+本リポジトリは、Standard Architecture Blueprint (SAB) プロジェクト全体の**ガバナンス（統治）**と**共通標準**を一元管理するためのセントラルリポジトリである。
+GitHubの特殊仕様を利用し、組織内の全リポジトリに対して「規律」と「型」を自動的に供給する役割を担う。
 
-## 🏛️ 本リポジトリの役割
-AP試験（共通フレーム/SLCP）およびデファクトスタンダードに基づき、以下の資産を組織全体に提供する。
+## 🏛️ 管理資産と役割（6つの重要資産）
+本リポジトリでは、AP試験（共通フレーム/SLCP）の標準に基づき、以下の6ファイルを管理している。
 
-1. **Organization Profile (`/profile`)**: 
-   - 組織のトップページ（ポータル）の定義。
-2. **Standard Templates (`/ISSUE_TEMPLATE`)**: 
-   - 全リポジトリ共通の要求定義・タスク管理用の「型」。
-3. **Development Disciplines (`CONTRIBUTING.md`)**: 
-   - 開発プロセス（Gitワークフロー、コミット規約）の定義。
-4. **Shared Assets**: 
-   - Organization全体で再利用されるラベル、シークレット、自動化スクリプトの管理。
+### 1. ガバナンス・ドキュメント
+*   **`README.md` (本ファイル)**: 
+    - **役割**: 統治マニュアル。本リポジトリの構成と運用ルールを定義する。
+*   **`CONTRIBUTING.md`**: 
+    - **役割**: 開発規律。Gitワークフロー、コミット規約、PRの手順を定義し、開発の標準化を図る。
+*   **`CODE_OF_CONDUCT.md`**: 
+    - **役割**: 行動規範。プロフェッショナルな開発環境を維持するための倫理規定。
 
-## 📂 構成管理
-- `/profile/README.md`: Organizationポータル用ドキュメント。
-- `/ISSUE_TEMPLATE/`: 共通Issueテンプレート群。
-- `CONTRIBUTING.md`: 開発規律（共通開発標準）。
-- `CODE_OF_CONDUCT.md`: 開発倫理（行動規範）。
+### 2. 広報・ポータル資産
+*   **`profile/README.md`**: 
+    - **役割**: 帝国ポータル。Organizationのトップページに表示される「全体地図」。4階層アーキテクチャ図を含む。
 
-## 🛠️ 運用ルール
-- 全てのリポジトリは、本リポジトリで定義された `ISSUE_TEMPLATE` を使用してタスクを管理すること。
-- 開発規律の変更（ブランチ戦略の変更等）は、本リポジトリへのプルリクエストを通じて決定され、全組織へ波及させる。
+### 3. 共通ワークフロー・テンプレート
+*   **`.github/ISSUE_TEMPLATE/task.md`**: 
+    - **役割**: 作業の型。要求事項の具体化と完了条件（DoD）を定義する定型フォーマット。
+*   **`.github/ISSUE_TEMPLATE/bug_report.md`**: 
+    - **役割**: 不具合報告の型。品質管理（QA）の観点から再現手順や環境情報を標準化する。
+
+## 🛡️ 運用・ガバナンスルール
+1. **一元管理の原則**: 全てのリポジトリは、本リポジトリで定義された規律およびテンプレートを継承しなければならない。
+2. **変更管理プロセス**: 開発規律（CONTRIBUTING.md）やIssueテンプレートの変更は、本リポジトリへのPull Requestを通じて審議され、承認後に組織全体へ波及させる。
+3. **DRY (Don't Repeat Yourself) の徹底**: 各リポジトリで個別の設定を持つことを避け、共通化できる設定は可能な限り本リポジトリへ集約する。
 
 ---
-"Centralized governance for decentralized development."
+**"Centralized Governance for Logical Excellence."**
